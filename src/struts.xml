@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+		
+
+		
+		<action name="register" class="org.vlad.struts.action.Register" method ="registration">
+			<result name="success">/success.jsp</result>
+			<result name="failure">/failure.jsp</result>
+		</action>
+		
+		<action name="login" class="org.vlad.struts.action.Login" method ="login">
+			<result name="success">/userProfile.jsp</result>
+			<result name="failure">/failure.jsp</result> 			
+		</action>
+		
+		<action name = "goToRegister">
+			<result>/register.jsp</result>
+		</action>
+		
+		<action name = "goToLogin">
+			<result>/index.jsp</result>
+		</action>
+		
+		<action name="getmembers" class="org.vlad.struts.action.UserDatabase" method ="getmembers">
+			<result name="success">/viewFriends.jsp</result>
+			<result name="failure">/viewFriends.jsp</result>
+		</action>
+		
+		<action name = "viewfriends" class="org.vlad.struts.action.ViewFriends" method ="viewfriends">
+			<result>/viewFriendsForReal.jsp</result>
+		</action>
+		
+		<action name = "goToUserProfile">
+			<result>/userProfile.jsp</result>
+		</action>
+	
+		<action name="addFriend" class="org.vlad.struts.action.AddFriend" method ="add">
+			<result name="success">/friendaddyes.jsp</result>
+			<result name="failure">/friendaddno.jsp</result> 			
+		</action>
+		
+		<action name = "goToUserProfile">
+			<result>/userProfile.jsp</result>
+		</action>
+		
+		<action name="post" class="org.vlad.struts.action.Post" method ="post">
+			<result name="success">/messageposted.jsp</result>
+			<result name="failure">/messagenotposted.jsp</result> 		
+		</action>
+		
+		<action name="viewWall" class="org.vlad.struts.action.Wall" method ="viewWall">
+			<result name="success">/wall.jsp</result>
+			<result name="failure">/wallnoexist.jsp</result> 		
+		</action>
+	</package>
+</struts>
